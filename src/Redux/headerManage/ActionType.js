@@ -1,0 +1,2 @@
+export const HEADER_TYPE_HOME = "HEADER_TYPE_HOME";
+export const HEADER_TYPE_OTHER = "HEADER_TYPE_OTHER";

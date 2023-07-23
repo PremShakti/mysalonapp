@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+
+/* CSS for slider container */
+.slider-container {
+  overflow: hidden;
+  width: 500px; /* Adjust the width to your preference */
+  height: 300px; /* Adjust the height to your preference */
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CSS for individual slides */
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Show active slide */
+.active {
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+
+/* alag */
+
+form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 70%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+}
+form input{
+  margin-bottom: 30px;
+  border: 1px solid rgb(224, 224, 224);
+  outline: none;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+}
+form textarea{
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid rgb(224, 224, 224);
+  outline: none;
+  height: 130px;
+  border-radius: 5px;
+}
+.submit{
+ width: 150px;
+ height: 50px;
+ border-radius: 10px;
+ background-color: rgb(85, 85, 255);
+ color: white;
+ font-weight: bold;
+}
+form label{
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(163, 163, 163);
 }
 
-.App-link {
-  color: #61dafb;
+.bgimage{
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='59.428' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M0 70.975V47.881m20-1.692L8.535 52.808v13.239L20 72.667l11.465-6.62V52.808zm0-32.95l11.465-6.62V-6.619L20-13.24 8.535-6.619V6.619L20 13.24m8.535 4.927v13.238L40 38.024l11.465-6.62V18.166L40 11.546zM20 36.333L0 47.88m0 0v23.094m0 0l20 11.548 20-11.548V47.88m0 0L20 36.333m0 0l20 11.549M0 11.547l-11.465 6.619v13.239L0 38.025l11.465-6.62v-13.24L0 11.548v-23.094l20-11.547 20 11.547v23.094M20 36.333V13.24'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(0, 0%, 90%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.galary-page{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='59.428' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M0 70.975V47.881m20-1.692L8.535 52.808v13.239L20 72.667l11.465-6.62V52.808zm0-32.95l11.465-6.62V-6.619L20-13.24 8.535-6.619V6.619L20 13.24m8.535 4.927v13.238L40 38.024l11.465-6.62V18.166L40 11.546zM20 36.333L0 47.88m0 0v23.094m0 0l20 11.548 20-11.548V47.88m0 0L20 36.333m0 0l20 11.549M0 11.547l-11.465 6.619v13.239L0 38.025l11.465-6.62v-13.24L0 11.548v-23.094l20-11.547 20 11.547v23.094M20 36.333V13.24'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(0, 0%, 90%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+}
+
+@media screen and (max-width:850px) {
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  
   }
 }
