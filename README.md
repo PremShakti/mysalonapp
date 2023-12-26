@@ -7,6 +7,17 @@
 
 Welcome to My salon App or Aries, your premier destination for beauty and relaxation. Our cutting-edge salon website, powered by the robust MERN stack, is designed to offer you a seamless and immersive experience from the moment you land on our page.
 
+This project is built using the following technologies:
+
+HTML
+CSS
+Chakra UI
+React js
+MongoDB
+Express
+Node.js
+
+
 **Explore Our Services:**
 Discover a world of beauty and wellness with our comprehensive range of services. From trendy haircuts and stunning color treatments to rejuvenating facials and soothing massages, our skilled professionals are committed to enhancing your natural beauty and leaving you feeling refreshed and revitalized.
 
