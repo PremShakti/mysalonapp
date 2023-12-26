@@ -1,0 +1,44 @@
+/* HeadlineSlider.css */
+
+/* Container for the slider */
+.headline-slider {
+    width: 80%; /* Adjust the width of the slider container */
+    margin: 0 auto; /* Center the slider horizontally */
+  }
+  
+  /* Individual slide item */
+  .headline-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Adjust the height of each slide */
+    background-color: #f2f2f2; /* Set background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: slideRightToLeft 10s linear infinite;
+  }
+  
+  /* Headline text */
+  .headline-slide h2 {
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 10px;
+  }
+  
+  /* Category text */
+  .headline-slide p {
+    font-size: 16px; /* Adjust font size */
+    color: #d30000; /* Adjust text color */
+  }
+  
+  /* CSS Animation */
+  @keyframes slideRightToLeft {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  

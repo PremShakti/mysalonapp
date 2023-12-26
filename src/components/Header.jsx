@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -22,8 +15,10 @@ const Header = ({ headerType }) => {
       position={"sticky"}
       top={0}
       zIndex={10000}
-      bg={"rgb(85, 85, 255)"}
-      color={"white"}
+      // bg={"rgb(85, 85, 255)"}
+      // bg={"rgb(255, 255, 255)"}
+      backdropFilter="blur(8px)"
+      
       boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"
     >
       <Flex w={"100%"} h={"70px"} align={"center"} justify={"center"}>
@@ -33,9 +28,15 @@ const Header = ({ headerType }) => {
           align={"center"}
           justifyContent={"space-between"}
         >
-          <Text as={"h1"} fontSize={30} fontWeight={"bold"}>
+          {/* <Text
+            as={"h1"}
+            fontSize={30}
+            fontWeight={"bold"}
+            color={"rgb(255,215,0)"}
+          >
             Ariess Mart Salon
-          </Text>
+          </Text> */}
+          <Box w={"90px"} >  <Image src="/logo.png" alt="logo" w={"100%"} /></Box>
           {!headerType ? (
             <UnorderedList
               display={{ base: "none", lg: "flex" }}
@@ -45,22 +46,27 @@ const Header = ({ headerType }) => {
               gap={10}
               cursor={"pointer"}
               fontWeight={"bold"}
+              fontSize={"large"}
+              fontFamily={"sans-serif"}
+              // color={"#9b9000"}
+              
+      
             >
-              <ListItem>
-                <Link to="home" spy={true} smooth={true} duration={500}>
+              <ListItem  >
+                <Link to="home" spy={true} smooth={true} duration={500} >
                   Home
                 </Link>
               </ListItem>
               <ListItem>
-                <Link to="gallery-comp" spy={true} smooth={true} duration={500}>
+                <Link to="gallery" spy={true} smooth={true} duration={500}>
                   Gallery
                 </Link>
               </ListItem>
 
               <ListItem>
-                <Link to="service" spy={true} smooth={true} duration={500}>
+                <NavLink to={"/services"} spy={true} smooth={true} duration={500}>
                   Services
-                </Link>
+                </NavLink>
               </ListItem>
               <ListItem>
                 <Link to="about" spy={true} smooth={true} duration={500}>
@@ -82,6 +88,7 @@ const Header = ({ headerType }) => {
               gap={10}
               cursor={"pointer"}
               fontWeight={"bold"}
+              fontSize={"large"}
             >
               <ListItem>
                 <NavLink to={"/"}>Home</NavLink>
@@ -90,7 +97,7 @@ const Header = ({ headerType }) => {
                 <NavLink to={"/gallery"}>Gallery</NavLink>
               </ListItem>
               <ListItem>
-                <NavLink to={"/"}>Services</NavLink>
+                <NavLink to={"/services"}  >Services</NavLink>
               </ListItem>
               <ListItem>
                 <NavLink to={"/"}>About</NavLink>
@@ -111,24 +118,22 @@ const Header = ({ headerType }) => {
         </Flex>
       </Flex>
 
-
       <Box
         display={{ base: "flex", lg: "none" }}
         h={"100vh"}
         flexDirection={"column"}
-        pl={10}
-        pt={10}
         position={"fixed"}
         top={"70px"}
         left={0}
         zIndex={1000}
-        transform={list ? "translateX(0%)" : "translateX(-100%)"}
+        // transform={list ? "translateX(0%)" : "translateX(-100%)"}
+        height={list ? "400px" : "0px"}
         overflow={"hidden"}
-        transition={"transform 250ms ease-in-out"}
+        // transition={"transform 250ms ease-in-out"}
+        transition={"height 350ms ease-in-out"}
         gap={7}
-        
-        bg={"rgb(85, 85, 255)"}
-       
+        // bg={"rgb(228, 194, 0)"}
+        bg={"black"}
         w={"100%"}
         color={"white"}
         fontWeight={"bold"}
@@ -137,34 +142,94 @@ const Header = ({ headerType }) => {
         {!headerType ? (
           <UnorderedList
             listStyleType={"none"}
-           spacing={5}
+            spacing={5}
             cursor={"pointer"}
             fontSize={"large"}
             fontWeight={"bold"}
           >
-            <ListItem >
-              <Link to="home" spy={true} smooth={true} duration={500} onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <Link
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={handleListView}
+              >
                 Home
               </Link>
             </ListItem>
-            <ListItem >
-              <Link to="gallery-comp" spy={true} smooth={true} duration={500} onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <Link
+                to="gallery"
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={handleListView}
+              >
                 Gallery
               </Link>
             </ListItem>
 
-            <ListItem >
-              <Link to="service" spy={true} smooth={true} duration={500} onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <NavLink
+                to={"/services"}
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={handleListView}
+              >
                 Services
-              </Link>
+              </NavLink>
             </ListItem>
-            <ListItem >
-              <Link to="about" spy={true} smooth={true} duration={500} onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={handleListView}
+              >
                 About
               </Link>
             </ListItem>
-            <ListItem >
-              <Link to="contact" spy={true} smooth={true} duration={500} onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={handleListView}
+              >
                 Contact
               </Link>
             </ListItem>
@@ -172,35 +237,63 @@ const Header = ({ headerType }) => {
         ) : (
           <UnorderedList
             listStyleType={"none"}
-           spacing={5}
             cursor={"pointer"}
             fontWeight={"bold"}
             fontSize={"large"}
-            
           >
-            <ListItem >
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
               <NavLink to="/" onClick={handleListView}>
                 Home
               </NavLink>
             </ListItem>
-            <ListItem >
-              <NavLink to="/gallery"  onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <NavLink to="/gallery" onClick={handleListView}>
                 Gallery
               </NavLink>
             </ListItem>
 
-            <ListItem >
-              <NavLink to="/" onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <NavLink to="/services" onClick={handleListView}>
                 Services
               </NavLink>
             </ListItem>
-            <ListItem >
-              <Link to="/"  onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <Link to="/" onClick={handleListView}>
                 About
               </Link>
             </ListItem>
-            <ListItem >
-              <NavLink to="/"  onClick={handleListView}>
+            <ListItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              borderBottom={"1px dotted white"}
+              h={12}
+            >
+              <NavLink to="/" onClick={handleListView}>
                 Contact
               </NavLink>
             </ListItem>

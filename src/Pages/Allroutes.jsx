@@ -6,6 +6,10 @@ import Contact from './Contact'
 import Gallery from './Gallery'
 import Services from './Services'
 import Hero from './Hero'
+import Testimonialspage from './Testimonialspage'
+import Admin from './Admin'
+import Login from './Login'
+import Privetrout from '../components/Privetrout'
 
 const Allroutes = () => {
   return (
@@ -16,6 +20,13 @@ const Allroutes = () => {
             <Route path='/contact' element={<Contact/>} />
             <Route path='/gallery' element={<Gallery/>} />
             <Route path='/services' element={<Services/>} />
+            <Route path='/testimonial' element={<Testimonialspage/>} />
+            <Route path='/admin' element={ <Privetrout>
+              <Admin/>
+            </Privetrout> } />
+            <Route path='/login' element={<Login/>} />
+
+
         </Routes>
       
     </div>

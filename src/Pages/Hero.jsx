@@ -5,17 +5,32 @@ import { useDispatch } from "react-redux";
 import { headerTypeHome } from "../Redux/headerManage/Action";
 import Gallerycomp from "./Gallarycomp";
 
+import TestimonialSliderComp from "../components/TestimonialSliderComp";
+import Aboutcomp from "../components/Aboutcomp";
+import { Box } from "@chakra-ui/react";
+
+import HeadlineSlider from "../components/HeadlinSlider";
+import { GetServices } from "../Redux/services/Action";
+
 const Hero = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(headerTypeHome());
+    dispatch(GetServices())
   }, [dispatch]);
+  
+
+
   return (
-    <div>
+    <Box  >
       <Home />
+      <HeadlineSlider/>
+      <Aboutcomp/>
+      
       <Gallerycomp />
       <Contact />
-    </div>
+      <TestimonialSliderComp/>
+    </Box>
   );
 };
 

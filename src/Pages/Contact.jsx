@@ -8,15 +8,16 @@ import { MdOutgoingMail } from "react-icons/md";
 import Map from "../components/Map";
 const Contact = () => {
   return (
-    <>
+    <Box pt={"1px"} id="contact" className="bgimage">
       <Heading
-        id="contact"
         as="h2"
         size="xl"
         letterSpacing={5}
-        mt={"50px"}
+        mt={{ base: "70px", lg: "150px" }}
         mb={"50px"}
         textAlign={"center"}
+        fontFamily={`Arvo", Helvetica, Arial, sans-serif`}
+        fontWeight={400}
       >
         CONTACT US
       </Heading>
@@ -27,27 +28,37 @@ const Contact = () => {
         margin={"auto"}
         mt={10}
         mb={10}
-        boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
+        // boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
       >
         <Box
           w={{ base: "100%", lg: "65%" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
-          className="bgimage"
+          // className="bgimage"
         >
           <Form />
         </Box>
         <Box
           display={"flex"}
           w={{ base: "100%", lg: "35%" }}
-          bg={"rgb(110, 110, 255)"}
+          // bg={"rgb(110, 110, 255)"}
+          // bg={"rgb(255,215,0) "}
+          
+          background="linear-gradient(135deg, #5c67fd, #e733f7)"
           color={"white"}
           alignItems={"center"}
           justifyContent={"center"}
+          borderRadius={{ base: "0px", lg: "20px 0px 20px 0px" }}
+          fontFamily={"sans-serif"}
         >
-          <Box w={"80%"} pt={10} pb={10} fontFamily={"sans-serif"}>
-            <Text lineHeight={7} textAlign={"left"}>
+          <Box
+            w={"80%"}
+            pt={{ base: 10, lg: 2 }}
+            pb={{ base: 10, lg: 2 }}
+           
+          >
+            <Text lineHeight={7} textAlign={"left"}  >
               Get the best salon experience! Have questions or want to book an
               appointment? We're here to help! Use the form below to reach our
               skilled team. Your satisfaction is our priority, so share your
@@ -96,14 +107,14 @@ const Contact = () => {
                 >
                   <MdOutgoingMail />
                 </Circle>
-                <Box>abcdemo@gmail.com</Box>
+                <Box>ms@ariessmartsalon.com</Box>
               </Box>
             </Flex>
           </Box>
         </Box>
       </Box>
       <Map />
-    </>
+    </Box>
   );
 };
 

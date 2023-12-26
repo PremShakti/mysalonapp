@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,33 +9,43 @@ import "swiper/css/navigation";
 
 import "./styles.css";
 
-// import required modules
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import SliderImage from "./SliderImage";
+import { useDispatch, useSelector } from "react-redux";
+import { bannerSliderImages } from "../Redux/imagebannerslider/Action";
 
 export default function SliderForBanner() {
-  const [Sdata] = useState([
-    {
-      src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-      srcM: "https://images.pexels.com/photos/7755461/pexels-photo-7755461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-      srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-      srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-      srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-      srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-  ]);
+const Sdata=useSelector((store)=>store.getImagesForBannerSlider.imagesForBannerSlider)
+
+const dispatch=useDispatch()
+
+useEffect(()=>{
+  dispatch(bannerSliderImages())
+})
+
+  // const [Sdata] = useState([
+  //   {
+  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
+  //     srcM: "https://images.pexels.com/photos/7755461/pexels-photo-7755461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
+  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
+  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
+  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
+  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  // ]);
 
   return (
     <>
@@ -55,8 +65,7 @@ export default function SliderForBanner() {
       >
         {Sdata?.map((e, i) => (
           <SwiperSlide key={i}>
-            {" "}
-            <SliderImage key={i} i={i} src={e.src} />{" "}
+            <SliderImage key={i} i={i} src={e.url} />
           </SwiperSlide>
         ))}
       </Swiper>
