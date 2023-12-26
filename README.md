@@ -1,6 +1,6 @@
-# My Salon App
+# My Salon App ,Aries
 
-Certainly! Below is a descriptive text for your full-fledged salon website built using the MERN (MongoDB, Express.js, React, Node.js) stack:
+
 
 ---
 ![FireShot Capture 006 - React App - mysalonapp vercel app](https://github.com/PremShakti/mysalonapp/assets/112472700/bbe37584-2352-44d4-832d-d8d514279244)
