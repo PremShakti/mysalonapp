@@ -6,6 +6,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Imagegallry from "../components/Imagegallry";
 import { getImages } from "../Redux/postreducer/Action";
+import { images } from "../data/gallery";
 
 const Gallery = () => {
   const dispatch = useDispatch();
@@ -13,28 +14,12 @@ const Gallery = () => {
     dispatch(HeaderTypeOther());
   }, [dispatch]);
 
-  const images=useSelector((store)=>store.getImages.images)
+  // const images=useSelector((store)=>store.getImages.images)
   useEffect(()=>{
     dispatch(getImages())
   },[dispatch])
 
-  // const [images] = useState([
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/20220305_194925-1536x1152.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/Keratine-Jamshedpur.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/Balayage-1.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Pic-7.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Pic-2.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Pic-7.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Pic-6.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/Im-9.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Nomaan-Nadia-1-2-e1675957723282-768x427.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/20220305_194925-1536x1152.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/Keratine-Jamshedpur.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2023/02/Pic-7.jpg",
-  //   "https://ariessmartsalon.com/wp-content/uploads/2022/04/20220305_194925-1536x1152.jpg",
 
-  //   // Add more image URLs as needed
-  // ]);
 
   return (
     <>
@@ -61,7 +46,7 @@ const Gallery = () => {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
           <Masonry gutter="15px">
             {images?.map((image, index) => (
-              <Imagegallry key={index} image={image.url} index={index} />
+              <Imagegallry key={index} image={image} index={index} />
             ))}
           </Masonry>
         </ResponsiveMasonry>

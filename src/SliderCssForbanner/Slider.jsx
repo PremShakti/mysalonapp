@@ -14,9 +14,10 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import SliderImage from "./SliderImage";
 import { useDispatch, useSelector } from "react-redux";
 import { bannerSliderImages } from "../Redux/imagebannerslider/Action";
+import { Sdata } from "../data/slider";
 
 export default function SliderForBanner() {
-const Sdata=useSelector((store)=>store.getImagesForBannerSlider.imagesForBannerSlider)
+// const Sdata=useSelector((store)=>store.getImagesForBannerSlider.imagesForBannerSlider)
 
 const dispatch=useDispatch()
 
@@ -24,28 +25,7 @@ useEffect(()=>{
   dispatch(bannerSliderImages())
 })
 
-  // const [Sdata] = useState([
-  //   {
-  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-  //     srcM: "https://images.pexels.com/photos/7755461/pexels-photo-7755461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   },
-  //   {
-  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   },
-  //   {
-  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   },
-  //   {
-  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   },
-  //   {
-  //     src: "https://framerusercontent.com/images/OEhnOJLjxZJLueiEGMYs9oASY4.png",
-  //     srcM: "https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   },
-  // ]);
+
 
   return (
     <>
@@ -65,7 +45,7 @@ useEffect(()=>{
       >
         {Sdata?.map((e, i) => (
           <SwiperSlide key={i}>
-            <SliderImage key={i} i={i} src={e.url} />
+            <SliderImage key={i} i={i} src={e.src} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -15,12 +15,14 @@ import { useWindowSize } from "react-use";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { GallerySliderImage } from "../Redux/imagebannerslider/Action";
+import { images } from "../data/gallery";
+import Imagecomp from "../components/Imagecomp";
 
 export default function Gallerycomp() {
   const { width } = useWindowSize();
   const navigate = useNavigate();
   const dispatch=useDispatch()
-  const images=useSelector((store)=>store.getImagesForBannerSlider.imagesForGallerySlider)
+  // const images=useSelector((store)=>store.getImagesForBannerSlider.imagesForGallerySlider)
 
 
 useEffect(()=>{
@@ -71,7 +73,7 @@ useEffect(()=>{
         >
           {images?.map((image, index) => (
             <SwiperSlide key={index}>
-              <Imagegallry image={image.url} index={index} />
+              <Imagecomp src={image} i={index} />
             </SwiperSlide>
           ))}
         </Swiper>
